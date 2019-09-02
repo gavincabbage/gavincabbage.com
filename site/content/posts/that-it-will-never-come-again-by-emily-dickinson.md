@@ -5,6 +5,8 @@ tags: ["poetry"]
 draft: false
 ---
 
+By Emily Dickinson
+
 That it will never come again  
 Is what makes life so sweet.  
 Believing what we don’t believe  

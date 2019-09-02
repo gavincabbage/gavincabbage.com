@@ -5,7 +5,6 @@ tags: ["poetry"]
 draft: false
 ---
 
-<pre>
 "The sun was shining on the sea,
       Shining with all his might:
 He did his very best to make
@@ -131,4 +130,3 @@ Shall we be trotting home again?'
       But answer came there none —
 And this was scarcely odd, because
       They'd eaten every one."
-</pre>

@@ -1,9 +1,13 @@
 <div id="nav-border" class="container">
-<nav id="nav" class="">
+<nav id="nav" class="nav">
+<h5 class="nav-logo left">Gavin Cabbage</h5>
+<div class="right">
 {{ range .Site.Menus.main }} 
-    {{ $icon := printf "<i data-feather=\"%s\"></i>" .Pre }}
-    {{ $text := print $icon " " .Name | safeHTML }}
-    <a class="nav-link" href="{{ .URL }}">{{ $text }}</a>
+    <!-- {{ $icon := printf "<i data-feather=\"%s\"></i>" .Pre }} -->
+    <!-- {{ $text := print $icon " " .Name | safeHTML }} -->
+    {{ $text := print .Name | safeHTML }}
+    <a class="nav-item right" href="{{ .URL }}">{{ $text }}</a>
 {{ end }}
+</div>
 </nav>
 </div>

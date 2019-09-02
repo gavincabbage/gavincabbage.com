@@ -1,0 +1,11 @@
+{{ $feather := "js/feather.min.js" | absURL }}
+<script src="{{ $feather }}"></script>
+<script>
+  feather.replace()
+</script>
+
+{{ $hl := "js/highlight.min.js" | absURL }}
+<script src="{{ $hl }}"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
