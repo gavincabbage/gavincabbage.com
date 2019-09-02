@@ -1,0 +1,20 @@
+language: go
+go: 1.12.x
+install:
+  - go get -v github.com/gohugoio/hugo
+script:
+  - cd site
+  - hugo -D
+  - cat public/index.html
+deploy:
+  provider: s3
+  bucket: gavincabbage.com
+  acl: public_read
+  local_dir: public
+  skip_cleanup: true
+  on:
+    branch: master
+    repo: gavincabbage/gavincabbage.com
+  access_key_id: AKIAJPTD5BXSUWKLFYFQ
+  secret_access_key:
+    secure: ZSHpE6ROBzIkOu8MMEyXrj6+Q5Evp2LquY007/ymXxaPH3Z0wnun4kUyF01uims8Pi56OcRLycYTBV/mqDoJilNhbjtLiyxNHv40XoqaD3CRQ+aamPwr0dK4gyVfl0ECn+ma+olkr0ghl1fd44WIsfHh0eJHPxwYjdxY7sh6rrwan6YdSlzv27GnVryEYWgJvLz7nrdW9WKP+6qnCphIaxi5IVas7qxxYJZxas3LZpTGOKsjIu1Waq+TMX3yi656WbyCiBRiLmryNlwVJ588MWjrsive5yR023wE2DleTJqc4o/eiCoc3iQsliNxBSw1fvpF2445Z17SLqviSxUyBHKBP9tTym5CJx7lluxHJw5llIZn3p/Ywnn7v3LryhggCNuzjhd4MMOJcJt9y+bj5PVaF91kYVg2++Db4i+CJdN8IeTfZicKD7pFt9I1rj4LtB5eSTY7L9nEw/Sdnnt5kFXijvSt5k+/n/cEa1L66qp97EBvVoZhwhMU4oK6ieb22mDYvuzVaMnvEjgsArBFgBShJ/bfmL/s6c+AW38kL7VgpoQ0Ea3mWmOrQc8NWRw+5op2H5WlvDzTZuYtweV7rMr58wha8s7nAlxTV9QUpFKegXLZcx9JI8xgd/90HmuJhsYwSjzxYpMWoFJsEXPV+rz/vmGBmNZwFlWnM6ICS9A=
