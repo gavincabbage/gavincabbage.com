@@ -1,7 +1,7 @@
 ---
 title: "Lorem"
 date: 2019-09-02T13:02:40-04:00
-tags: []
+tags: ["test"]
 draft: false
 ---
 

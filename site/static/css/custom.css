@@ -5,6 +5,39 @@ body {
     background-color: rgb(245, 245, 245)
 }
 
+
+.feather16{
+    width: 16px;
+    height: 16px;
+}
+
+.feather24{
+    width: 24px;
+    height: 24px;
+}
+
+.feather32{
+    width: 32px;
+    height: 32px;
+}
+
+.badge {
+    background-color: black; /* Changing background color */
+    color: white;
+    font-weight: bold; /* Making font bold */
+    border-radius: 3px; /* Making border radius */
+    width: auto; /* Making auto-sizable width */
+    height: auto; /* Making auto-sizable height */
+    padding: 3px 5px 5px 5px; /* Making space around letters */
+    font-size: .8em; /* Changing font size */
+    text-decoration: none;
+}
+
+.badge:hover {
+    color: rgb(200, 200, 200)
+}
+
+
 /* Larger than mobile screen */
 @media (min-width: 40.0rem) {
 

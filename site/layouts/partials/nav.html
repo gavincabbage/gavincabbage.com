@@ -1,13 +1,11 @@
 <div id="nav-border" class="container">
 <nav id="nav" class="nav">
-<h5 class="nav-logo left">Gavin Cabbage</h5>
-<div class="right">
+<h5 class="nav-logo">Gavin Cabbage</h5>
 {{ range .Site.Menus.main }} 
     <!-- {{ $icon := printf "<i data-feather=\"%s\"></i>" .Pre }} -->
     <!-- {{ $text := print $icon " " .Name | safeHTML }} -->
     {{ $text := print .Name | safeHTML }}
-    <a class="nav-item right" href="{{ .URL }}">{{ $text }}</a>
+    <a class="nav-item" href="{{ .URL }}">{{ $text }}</a>
 {{ end }}
-</div>
 </nav>
 </div>
