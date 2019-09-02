@@ -11,7 +11,7 @@ title = "Gavin Cabbage"
 
 [menu]
   [[menu.main]]
-    name = "Home"
+    name = "About"
     pre = "home"
     url = "/"
     weight = 1
