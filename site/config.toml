@@ -1,0 +1,6 @@
+baseURL = "https://gavincabbage.com/"
+languageCode = "en-us"
+title = "Gavin Cabbage"
+
+[params]
+  homeText = "You just made a Hugo blog from scratch."
