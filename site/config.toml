@@ -4,24 +4,32 @@ title = "Gavin Cabbage"
 
 [params]
   dateFormat = "Jan 2, 2006"
-  homeText = "You just made a Hugo blog from scratch."
 
 [taxonomies]
   tag = "tags"
 
 [menu]
   [[menu.main]]
-    name = "About"
-    pre = "home"
+    name = "Home"
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "Posts"
-    pre = "edit"
-    url = "/posts/"
+    name = "About"
+    url = "/posts/about-me/"
     weight = 2
   [[menu.main]]
-    name = "Tags"
-    pre = "tag"
-    url = "/tags/"
+    name = "Posts"
+    url = "/posts/"
     weight = 3
+  [[menu.main]]
+    name = "Projects"
+    url = "/tags/projects/"
+    weight = 4
+  [[menu.main]]
+    name = "Cooking"
+    url = "/tags/cooking/"
+    weight = 5
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 6

@@ -1,8 +1,21 @@
 {{ define "main" }}
 
-<div id="" class="">
-    <h1>{{ .Title }}</h1>
-    <p class="font-125">{{ .Site.Params.homeText | markdownify }}</p>
-  </div>
+<p>
+    Github <a href="https://github.com/gavincabbage">gavincabbage</a>
+</p>
+
+<p>
+    Twitter <a href="https://twitter.com/gavincabbage">gavincabbage</a>
+</p>
+
+Recent posts:
+
+{{ range first 4 .Pages.ByPublishDate.Reverse }}
+<p>
+  <a class="" href="{{ .RelPermalink }}">{{ .Title }}</a>
+  <br>
+  {{ partial "date-and-tags.html" . }}
+</p>
+{{ end }}
 
 {{ end }}

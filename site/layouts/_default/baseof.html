@@ -6,9 +6,12 @@
     <div class="container">
       <main id="main">
        {{ block "main" . }}{{ end }}
+       {{ partial "foot.html" . }}
       </main>
+      
     </div>
+    
 
-    <{{ partial "script.html" . }}
+    {{ partial "script.html" . }}
   </body>
 </html>
