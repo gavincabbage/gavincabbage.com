@@ -4,11 +4,10 @@
   <body>
     {{ partial "nav.html" . }} 
     <div class="container">
-      <main id="main">
+      <main id="main" class="content">
        {{ block "main" . }}{{ end }}
-       {{ partial "foot.html" . }}
       </main>
-      
+      {{ partial "foot.html" . }}
     </div>
     
 

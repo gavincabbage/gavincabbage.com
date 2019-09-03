@@ -6,13 +6,14 @@ draft: false
 ---
 
 <div class="cards">
-<div class="card">
-    <h5 class="card-header">Rye Old Fashioned</h5>
-    <p class="card-body">
-    <ul>
-    <li>2oz. Rye</li>
-    </ul>
-    </p>
-    <div class="card-footer center text-center"><p>Garnish with orange</p></div>
-</div>
+  <div class="card">
+    <h5 class="card-header">Header</h5>
+    <p class="card-body">Content</p>
+    <div class="card-footer center text-center"><p>Footer</p></div>
+  </div>
+  <div class="card">
+    <h5 class="card-header">Header</h5>
+    <p class="card-body">Content</p>
+    <div class="card-footer center text-center"><p>Footer</p></div>
+  </div>
 </div>

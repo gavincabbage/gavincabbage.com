@@ -10,26 +10,14 @@ title = "Gavin Cabbage"
 
 [menu]
   [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
-  [[menu.main]]
     name = "About"
     url = "/posts/about-me/"
-    weight = 2
+    weight = 1
   [[menu.main]]
     name = "Posts"
     url = "/posts/"
-    weight = 3
+    weight = 2
   [[menu.main]]
-    name = "Projects"
-    url = "/tags/projects/"
-    weight = 4
-  [[menu.main]]
-    name = "Cooking"
-    url = "/tags/cooking/"
-    weight = 5
-  [[menu.main]]
-    name = "Tags"
+    name = "Topics"
     url = "/tags/"
-    weight = 6
+    weight = 3

@@ -47,10 +47,29 @@ a.link:hover {
     color: rgb(150, 150, 150);
 }
 
+code {
+    font-size: 70%;
+}
+
+a.logo {
+    text-decoration: none;
+    color: black;
+}
+
+a.logo:hover {
+    color: rgb(150, 150, 150);
+}
+
+.content {
+    margin-bottom: 4%;
+}
+
 
 /* Larger than mobile screen */
 @media (min-width: 40.0rem) {
-
+    code {
+        font-size: 90%;
+    }
 }
 
 /* Larger than tablet screen */
