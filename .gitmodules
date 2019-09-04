@@ -1,0 +1,3 @@
+[submodule "site/themes/ezhil"]
+	path = site/themes/ezhil
+	url = git@github.com:vividvilla/ezhil.git
