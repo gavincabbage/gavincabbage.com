@@ -13,7 +13,7 @@ googleAnalytics = "UA-147076716-1"
 
 [params]
 	# Blog subtitle which appears below blog title. Supports markdown.
-	subtitle = "Software engineer"
+	subtitle = "Coding and cooking all the things"
 	# Number of posts to show in recent posts list (Optional). Defaults to 10.
 	recentPostsCount = 7
 	# Content types which are excluded from recent posts and archive page (Optional). Defaults to ["page"]
@@ -35,7 +35,7 @@ url = "/posts"
 weight = 2
 
 [[menu.main]]
-name = "About"
+name = "About me"
 url = "/about"
 weight = 3
 
