@@ -4,7 +4,7 @@ title = "Gavin Cabbage"
 theme = "ezhil"
 
 # Enable syntax highlighting.
-pygmentsstyle = "default"
+pygmentsstyle = "vs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
@@ -60,6 +60,11 @@ url = "https://twitter.com/gavincabbage"
 name = "LinkedIn"
 icon = "linkedin"
 url = "https://www.linkedin.com/in/gavin-cabbage-9b31b376"
+
+[[params.social]]
+name = "RSS"
+icon = "rss"
+url = "/index.xml"
 
 # Enable tags.
 [taxonomies]
