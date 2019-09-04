@@ -4,6 +4,7 @@ install:
 - go get -v github.com/gohugoio/hugo
 - npm install -g travis-ci-cloudfront-invalidation
 script:
+- hugo version
 - cd site
 - hugo -D
 - cat public/index.html
