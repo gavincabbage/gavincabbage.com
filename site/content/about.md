@@ -20,5 +20,5 @@ In 2014 I graduated with a *B.S.* in Computer Science and a minor in Mathematics
 After college, I worked at Capital One for four years before moving on to the CodeShip team at CloudBees.
 For more details on my professional career, please see [my resume](/dl/resume.pdf).
 
-{{< figure src="/img/me.jpg" width="50%" alt="me" >}}
+{{< figure src="/img/me.jpg" alt="me" >}}
 
