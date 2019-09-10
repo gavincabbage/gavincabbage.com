@@ -1,4 +1,4 @@
-baseURL = "https://gavincabbage.com/"
+baseURL = "gavincabbage.com/"
 languageCode = "en-us"
 title = "Gavin Cabbage"
 theme = "ezhil"
@@ -45,14 +45,9 @@ url = "/tags/projects"
 weight = 4
 
 [[menu.main]]
-name = "Cooking"
-url = "/tags/cooking"
-weight = 5
-
-[[menu.main]]
 name = "Tags"
 url = "/tags"
-weight = 6
+weight = 5
 
 [permalinks]
 posts = "/:title/"
