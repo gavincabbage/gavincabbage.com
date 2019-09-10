@@ -41,12 +41,12 @@ weight = 3
 
 [[menu.main]]
 name = "Projects"
-url = "/posts/projects"
+url = "/tags/projects"
 weight = 4
 
 [[menu.main]]
 name = "Cooking"
-url = "/posts/cooking"
+url = "/tags/cooking"
 weight = 5
 
 [[menu.main]]

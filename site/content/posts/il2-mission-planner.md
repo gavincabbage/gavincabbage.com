@@ -3,6 +3,7 @@ title: "Il-2 Mission Planner"
 date: 2019-09-05T07:38:40-04:00
 draft: false
 disqus: false
+tags: ["projects","software engineering"]
 ---
 
 I maintain a navigation app for the *Il-2 Sturmovik* flight simulator series at [il2missionplanner.com](https://il2missionplanner.com).
