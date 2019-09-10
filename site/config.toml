@@ -1,4 +1,4 @@
-baseURL = "gavincabbage.com/"
+baseURL = "https://gavincabbage.com/"
 languageCode = "en-us"
 title = "Gavin Cabbage"
 theme = "ezhil"

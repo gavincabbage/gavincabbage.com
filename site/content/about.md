@@ -2,7 +2,8 @@
 title: "About me"
 date: 2019-04-19T21:37:58+05:30
 type: "page"
-disqus: false
+disqus: falsed
+draft: false
 ---
 
 My name is Gavin. This is my website- there are many like it, but this one is mine.
