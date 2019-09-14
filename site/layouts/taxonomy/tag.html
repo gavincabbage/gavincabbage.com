@@ -12,10 +12,10 @@
 			<h1 class="page-title">All articles</h1>
 		{{ end }}
 
-		<ul>
+		<ul class="posts">
             {{ range .Data.Pages }}
-                <li>
-                    <a href="{{.RelPermalink}}">{{ .Title }}</a>
+                <li class="post">
+                    <a href="{{ .RelPermalink }}">{{.Title}}</a> <span class="meta">{{ dateFormat "Jan 2, 2006" .Date }}</span>
                 </li>
             {{ end }}
         </ul>

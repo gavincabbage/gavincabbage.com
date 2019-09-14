@@ -9,4 +9,4 @@ tags: ["projects","software engineering"]
 
 I maintain a navigation app for the *Il-2 Sturmovik: Great Battles* flight simulator series at [il2missionplanner.com](https://il2missionplanner.com).
 
-{{< figure src="/img/il2.png" alt="il2missionplanner" >}}
+{{< figure src="/images/il2missionplanner.png" alt="il2missionplanner" >}}
