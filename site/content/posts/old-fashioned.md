@@ -1,6 +1,6 @@
 ---
 title: "Old Fashioned"
-description: "A classic cocktail recipe."
+description: "A classic cocktail recipe"
 date: 2019-09-03T21:51:04-04:00
 draft: false
 disqus: false
