@@ -15,11 +15,11 @@ jobs:
       HUGO_BUILD_DIR: ~/hugo/dist
     steps:
       - run:
-        name: install
-        command: |
-          apk update
-          apk add --update git hugo python python-dev py-pip build-base
-          pip install awscli
+          name: install
+          command: |
+            apk update
+            apk add --update git hugo python python-dev py-pip build-base
+            pip install awscli
       - checkout
       - run:
           name: build
