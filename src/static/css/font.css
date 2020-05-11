@@ -1,0 +1,15 @@
+@font-face {
+    font-family: Petrona;
+    src: url("../font/Petrona-Regular.ttf");
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+.c-title,
+.p-subtitle {
+    font-family: 'Petrona', serif;
+}

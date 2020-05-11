@@ -1,0 +1,67 @@
+theme = "pickles"
+baseurl = "gavincabbage.com"
+languageCode = "en-us"
+Title = "Hi! I'm Gavin"
+# Copyright notice. This is displayer in the footer.
+copyright = "&copy; Gavin Cabbage"
+
+# Google Analytics API key.
+googleAnalytics = "UA-147076716-1"
+
+[params]
+  custom_css = ["/css/custom.css", "/css/font.css"]
+  paginate = 5
+  twitter = "gavincabbage"
+  github = "gavincabbage"
+  youtube = "gavincabbage"
+  linkedin = "gavincabbage"
+  author = "Gavin Cabbage"
+  authorwebsite = "gavincabbage.com"
+  avatar = "/img/me.jpg"
+  contact = "mailto:contact05102020@gavincabbage.com"
+  bio = "Coding and cooking all the things"
+  # Short subtitle/tagline. This is displayed in the header.
+  subtitle = "This is my website. There are many like it, but this one is mine."
+  # Logo image. This is displayed ogp image.
+  logo = "/img/me.jpg"
+  favicon = "/favicon.ico"
+
+[[menu.main]]
+    name = "Posts"
+    url = "/"
+    weight = 1
+
+[[menu.main]]
+    name = "About"
+    url = "/about"
+    weight = 2
+
+[[menu.main]]
+    name = "Tags"
+    url = "/tags"
+    weight = 4
+
+[related]
+  # Only include matches with rank >= threshold. This is a normalized rank between 0 and 100.
+  threshold = 80
+
+  # To get stable "See also" sections we, by default, exclude newer related pages.
+  includeNewer = false
+
+  # Will lower case keywords in both queries and in the indexes.
+  toLower = false
+
+  [[related.indices]]
+  name = "keywords"
+  weight = 150
+  [[related.indices]]
+  name  = "author"
+  toLower = true
+  weight = 30
+  [[related.indices]]
+  name  = "tags"
+  weight = 100
+  [[related.indices]]
+  name  = "date"
+  weight = 10
+  pattern = "2017"
