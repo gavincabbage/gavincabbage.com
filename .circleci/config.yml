@@ -14,9 +14,10 @@ jobs:
       - run: pip install awscli
       - checkout
       - run: cd src && HUGO_ENV=production hugo -v -d ${HUGO_BUILD_DIR}
-      - run: |
-        htmlproofer ${HUGO_BUILD_DIR} --allow-hash-href --check-html \
-          --empty-alt-ignore --disable-external
+      - run:
+          command: |
+            htmlproofer ${HUGO_BUILD_DIR} --allow-hash-href --check-html \
+              --empty-alt-ignore --disable-external
     deploy:
       name: deploy to AWS
       command: |
