@@ -9,7 +9,7 @@ workflows:
 jobs:
   build_and_deploy:
     docker:
-      - image: cibuilds/hugo:latest
+      - image: alpine:latest
     working_directory: ~/hugo
     environment:
       HUGO_BUILD_DIR: ~/hugo/dist
