@@ -14,17 +14,27 @@ jobs:
       HUGO_BUILD_DIR: dist
     steps:
       - run:
-          name: install
+          name: Install Dependencies
           command: |
             apk update
             apk add --update git hugo python python-dev py-pip build-base
             pip install awscli
       - checkout
       - run:
-          name: build
+          name: Build with Hugo
           command: cd src && HUGO_ENV=production hugo -v -d ../${HUGO_BUILD_DIR}
       - run:
-          name: deploy
+          name: Deploy to S3
+          command: |
+            if [ "${CIRCLE_BRANCH}" = "master" ]; then
+              aws s3 sync ${HUGO_BUILD_DIR} s3://gavincabbage.com --delete && \
+              aws cloudfront create-invalidation \
+                --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION} --paths /*
+            else
+              echo "Not master branch, dry run only"
+            fi
+      - run:
+          name: Invalidate CloudFront distribution
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
               aws s3 sync ${HUGO_BUILD_DIR} s3://gavincabbage.com --delete && \
