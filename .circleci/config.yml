@@ -14,16 +14,16 @@ jobs:
       - run: pip install awscli
       - checkout
       - run: cd src && HUGO_ENV=production hugo -v -d ${HUGO_BUILD_DIR}
-       - run: |
-         htmlproofer ${HUGO_BUILD_DIR} --allow-hash-href --check-html \
-         --empty-alt-ignore --disable-external
+      - run: |
+        htmlproofer ${HUGO_BUILD_DIR} --allow-hash-href --check-html \
+          --empty-alt-ignore --disable-external
     - deploy:
-        name: deploy to AWS
-        command: |
-          if [ "${CIRCLE_BRANCH}" = "master" ]; then
-            aws s3 sync ${HUGO_BUILD_DIR} s3://gavincabbage.com --delete && \
-            aws cloudfront create-invalidation \
-              --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION} --paths /*
-          else
-            echo "Not master branch, dry run only"
-          fi
+      name: deploy to AWS
+      command: |
+        if [ "${CIRCLE_BRANCH}" = "master" ]; then
+          aws s3 sync ${HUGO_BUILD_DIR} s3://gavincabbage.com --delete && \
+          aws cloudfront create-invalidation \
+            --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION} --paths /*
+        else
+          echo "Not master branch, dry run only"
+        fi
