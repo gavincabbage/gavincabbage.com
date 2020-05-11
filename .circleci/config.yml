@@ -12,7 +12,7 @@ jobs:
       - image: alpine:latest
     working_directory: ~/hugo
     environment:
-      HUGO_BUILD_DIR: ~/hugo/dist
+      HUGO_BUILD_DIR: dist
     steps:
       - run:
           name: install
@@ -23,7 +23,7 @@ jobs:
       - checkout
       - run:
           name: build
-          command: cd src && HUGO_ENV=production hugo -v -d ${HUGO_BUILD_DIR}
+          command: cd src && HUGO_ENV=production hugo -v -d ../${HUGO_BUILD_DIR}
       - run:
           name: deploy
           command: |
