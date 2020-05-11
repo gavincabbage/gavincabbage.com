@@ -14,9 +14,12 @@ jobs:
     environment:
       HUGO_BUILD_DIR: ~/hugo/dist
     steps:
-      - run: apk update && apk add git
-      - run: apk add --update python python-dev py-pip build-base
-      - run: pip install awscli
+      - run:
+        name: install
+        command: |
+          apk update
+          apk add --update git hugo python python-dev py-pip build-base
+          pip install awscli
       - checkout
       - run:
           name: build
