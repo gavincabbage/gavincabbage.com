@@ -3,12 +3,11 @@ version: 2.1
 workflows:
   build_and_deploy:
     jobs:
-      - build
-      - deploy:
+      - build_and_deploy:
           context: aws
 
 jobs:
-  build:
+  build_and_deploy:
     docker:
       - image: cibuilds/hugo:latest
     working_directory: ~/hugo
@@ -19,18 +18,21 @@ jobs:
       - run: apk add --update python python-dev py-pip build-base
       - run: pip install awscli
       - checkout
-      - run: cd src && HUGO_ENV=production hugo -v -d ${HUGO_BUILD_DIR}
       - run:
+          name: build
+          command: cd src && HUGO_ENV=production hugo -v -d ${HUGO_BUILD_DIR}
+      - run:
+          name: htmlproofer
           command: |
             htmlproofer ${HUGO_BUILD_DIR} --allow-hash-href --check-html \
               --empty-alt-ignore --disable-external
-  deploy:
-    name: deploy to AWS
-    command: |
-      if [ "${CIRCLE_BRANCH}" = "master" ]; then
-        aws s3 sync ${HUGO_BUILD_DIR} s3://gavincabbage.com --delete && \
-        aws cloudfront create-invalidation \
-          --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION} --paths /*
-      else
-        echo "Not master branch, dry run only"
-      fi
+      - run:
+          name: deploy
+          command: |
+            if [ "${CIRCLE_BRANCH}" = "master" ]; then
+              aws s3 sync ${HUGO_BUILD_DIR} s3://gavincabbage.com --delete && \
+              aws cloudfront create-invalidation \
+                --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION} --paths /*
+            else
+              echo "Not master branch, dry run only"
+            fi
