@@ -1,10 +1,16 @@
 version: 2.1
 
+workflows:
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          context: aws
+
 jobs:
   build:
     docker:
       - image: cibuilds/hugo:latest
-    context: aws
     working_directory: ~/hugo
     environment:
       HUGO_BUILD_DIR: ~/hugo/dist
@@ -18,13 +24,13 @@ jobs:
           command: |
             htmlproofer ${HUGO_BUILD_DIR} --allow-hash-href --check-html \
               --empty-alt-ignore --disable-external
-    deploy:
-      name: deploy to AWS
-      command: |
-        if [ "${CIRCLE_BRANCH}" = "master" ]; then
-          aws s3 sync ${HUGO_BUILD_DIR} s3://gavincabbage.com --delete && \
-          aws cloudfront create-invalidation \
-            --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION} --paths /*
-        else
-          echo "Not master branch, dry run only"
-        fi
+  deploy:
+    name: deploy to AWS
+    command: |
+      if [ "${CIRCLE_BRANCH}" = "master" ]; then
+        aws s3 sync ${HUGO_BUILD_DIR} s3://gavincabbage.com --delete && \
+        aws cloudfront create-invalidation \
+          --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION} --paths /*
+      else
+        echo "Not master branch, dry run only"
+      fi
