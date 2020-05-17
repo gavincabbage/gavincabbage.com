@@ -27,7 +27,7 @@ jobs:
           name: Deploy to S3 and refresh CDN
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              aws version
+              aws --version
               aws s3 sync ${HUGO_BUILD_DIR} s3://gavincabbage.com --delete && \
               aws cloudfront create-invalidation \
                 --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION} --paths "/*"
