@@ -1,10 +1,9 @@
 theme = "pickles"
-baseurl = "gavincabbage.com"
+baseurl = "https://gavincabbage.com"
 languageCode = "en-us"
-Title = "Hi! I'm Gavin"
+title = "Hi! I'm Gavin"
 # Copyright notice. This is displayer in the footer.
 copyright = "&copy; Gavin Cabbage"
-
 # Google Analytics API key.
 googleAnalytics = "UA-147076716-1"
 
@@ -30,38 +29,33 @@ googleAnalytics = "UA-147076716-1"
     name = "Posts"
     url = "/"
     weight = 1
-
 [[menu.main]]
     name = "About"
-    url = "/about"
+    url = "/about/"
     weight = 2
-
 [[menu.main]]
     name = "Tags"
-    url = "/tags"
-    weight = 4
+    url = "/tags/"
+    weight = 3
 
 [related]
   # Only include matches with rank >= threshold. This is a normalized rank between 0 and 100.
   threshold = 80
-
   # To get stable "See also" sections we, by default, exclude newer related pages.
   includeNewer = false
-
   # Will lower case keywords in both queries and in the indexes.
   toLower = false
-
   [[related.indices]]
-  name = "keywords"
-  weight = 150
+      name = "keywords"
+      weight = 150
   [[related.indices]]
-  name  = "author"
-  toLower = true
-  weight = 30
+      name  = "author"
+      toLower = true
+      weight = 30
   [[related.indices]]
-  name  = "tags"
-  weight = 100
+      name  = "tags"
+      weight = 100
   [[related.indices]]
-  name  = "date"
-  weight = 10
-  pattern = "2017"
+      name  = "date"
+      weight = 10
+      pattern = "2017"

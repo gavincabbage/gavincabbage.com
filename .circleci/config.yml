@@ -24,22 +24,16 @@ jobs:
           name: Build with Hugo
           command: cd src && HUGO_ENV=production hugo -v -d ../${HUGO_BUILD_DIR}
       - run:
-          name: Deploy to S3
+          name: Deploy to S3 and refresh CDN
           command: |
+            env
+            echo "AWS_CLOUDFRONT_DISTRIBUTION=${AWS_CLOUDFRONT_DISTRIBUTION}"
+            echo "AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}"
+            echo "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}"
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
               aws s3 sync ${HUGO_BUILD_DIR} s3://gavincabbage.com --delete && \
               aws cloudfront create-invalidation \
-                --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION} --paths /*
-            else
-              echo "Not master branch, dry run only"
-            fi
-      - run:
-          name: Invalidate CloudFront distribution
-          command: |
-            if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              aws s3 sync ${HUGO_BUILD_DIR} s3://gavincabbage.com --delete && \
-              aws cloudfront create-invalidation \
-                --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION} --paths /*
+                --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION} --paths "/*"
             else
               echo "Not master branch, dry run only"
             fi
