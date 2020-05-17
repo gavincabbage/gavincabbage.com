@@ -5,3 +5,17 @@
 .p-menu__listitem {
     text-align: center;
 }
+
+.img-zoomable {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+}
+
+.img-small-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+}

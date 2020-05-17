@@ -59,3 +59,7 @@ googleAnalytics = "UA-147076716-1"
       name  = "date"
       weight = 10
       pattern = "2017"
+
+# Allow raw HTML in markdown
+[markup.goldmark.renderer]
+    unsafe= true
