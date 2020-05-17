@@ -26,11 +26,8 @@ jobs:
       - run:
           name: Deploy to S3 and refresh CDN
           command: |
-            env
-            echo "AWS_CLOUDFRONT_DISTRIBUTION=${AWS_CLOUDFRONT_DISTRIBUTION}"
-            echo "AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}"
-            echo "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}"
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
+              aws version
               aws s3 sync ${HUGO_BUILD_DIR} s3://gavincabbage.com --delete && \
               aws cloudfront create-invalidation \
                 --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION} --paths "/*"
